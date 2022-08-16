@@ -15,23 +15,23 @@ public class NoticeEntity {
     @Id
     private String noticeSeq;
 
-//    @NonNull
+    @NonNull
     @Field(name = "title")
     private String title;
 
-//    @NonNull
+    @NonNull
     @Field(name = "notice_yn")
     private String noticeYn;
 
-//    @NonNull
+    @NonNull
     @Field(name = "contents")
     private String contents;
 
-//    @NonNull
+    @NonNull
     @Field(name = "user_id")
     private String userId;
 
-//    @NonNull
+    @NonNull
     @Field(name = "read_cnt")
     private Long readCnt;
 
