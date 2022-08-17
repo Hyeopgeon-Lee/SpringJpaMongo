@@ -43,6 +43,7 @@ public class NoticeService implements INoticeService {
         return nList;
     }
 
+    @Transactional
     @Override
     public NoticeDTO getNoticeInfo(NoticeDTO pDTO, boolean type) {
 
@@ -80,7 +81,7 @@ public class NoticeService implements INoticeService {
         return rDTO;
     }
 
-
+    @Transactional
     @Override
     public void updateNoticeInfo(NoticeDTO pDTO) {
 
@@ -119,6 +120,7 @@ public class NoticeService implements INoticeService {
 
     }
 
+    @Transactional
     @Override
     public void deleteNoticeInfo(NoticeDTO pDTO) throws Exception {
 
