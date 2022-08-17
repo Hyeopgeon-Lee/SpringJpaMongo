@@ -14,3 +14,4 @@ public interface NoticeRepository extends MongoRepository<NoticeEntity, String> 
     NoticeEntity findByNoticeSeq(String noticeSeq);
 
 }
+
