@@ -36,7 +36,7 @@ public class UserInfoController {
 
         log.info(this.getClass().getName() + ".user/userRegForm End!");
 
-        return "/user/userRegForm";
+        return "user/userRegForm";
     }
 
 
@@ -168,7 +168,7 @@ public class UserInfoController {
 
         log.info(this.getClass().getName() + ".user/login End!");
 
-        return "/user/login";
+        return "user/login";
     }
 
 
@@ -299,6 +299,6 @@ public class UserInfoController {
 
         log.info(this.getClass().getName() + ".user/loginSuccess End!");
 
-        return "/user/loginSuccess";
+        return "user/loginSuccess";
     }
 }
