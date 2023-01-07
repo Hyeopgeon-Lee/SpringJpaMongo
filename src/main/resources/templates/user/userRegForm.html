@@ -11,12 +11,14 @@
         // HTML로딩이 완료되고, 실행됨
         $(document).ready(function () {
 
+            let f = document.getElementById("f"); // form 태그
+
             // html의 btnSend id의 버튼 객체 가져오기
             const btnSend = document.getElementById("btnSend");
 
             // 버튼 클릭했을때, 발생되는 이벤트 생성함(onclick 이벤트와 동일함)
             btnSend.addEventListener("click", e => {
-                doSubmit(); // 회원가입하기
+                doSubmit(f); // 회원가입하기
             })
 
             // html의 btnAddr id의 버튼 객체 가져오기
@@ -24,15 +26,13 @@
 
             // 버튼 클릭했을때, 발생되는 이벤트 생성함(onclick 이벤트와 동일함)
             btnAddr.addEventListener("click", e => {
-                kakaoPost(); // 카카오 주소 조회하기
+                kakaoPost(f); // 카카오 주소 조회하기
             })
 
         })
 
         //회원가입 정보의 유효성 체크하기
-        function doSubmit() {
-
-            let f = document.getElementById("f"); // form 태그
+        function doSubmit(f) {
 
             if (f.user_id.value === "") {
                 alert("아이디를 입력하세요.");

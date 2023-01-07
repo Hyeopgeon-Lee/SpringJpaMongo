@@ -47,10 +47,11 @@
 
                         if (json.result === 1) { // 로그인 성공
                             alert(json.msg); // 메시지 띄우기
-                            location.href = "/user/loginSuccess"; // 공지사항 리스트 이동
+                            location.href = "/user/loginSuccess"; // 로그인 성공 페이지 이동
 
                         } else { // 로그인 실패
                             alert(json.msg); // 메시지 띄우기
+                            $("#user_id").focus(); // 아이디 입력 항목에 마우스 커서 이동
                         }
 
                     }
@@ -71,14 +72,14 @@
                 <div class="divTableCell">아이디
                 </div>
                 <div class="divTableCell">
-                    <input type="text" name="user_id" style="width:95%"/>
+                    <input type="text" name="user_id" id="user_id" style="width:95%"/>
                 </div>
             </div>
             <div class="divTableRow">
                 <div class="divTableCell">비밀번호
                 </div>
                 <div class="divTableCell">
-                    <input type="password" name="password" style="width:95%"/>
+                    <input type="password" name="password" id="password" style="width:95%"/>
                 </div>
             </div>
         </div>

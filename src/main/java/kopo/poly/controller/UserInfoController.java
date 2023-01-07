@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -36,7 +35,7 @@ public class UserInfoController {
 
         log.info(this.getClass().getName() + ".user/userRegForm End!");
 
-        return "/user/userRegForm";
+        return "user/userRegForm";
     }
 
 
@@ -168,7 +167,7 @@ public class UserInfoController {
 
         log.info(this.getClass().getName() + ".user/login End!");
 
-        return "/user/login";
+        return "user/login";
     }
 
 
@@ -269,11 +268,17 @@ public class UserInfoController {
                  *
                  * Session 단어에서 SS를 가져온 것이다.
                  */
+                msg = "로그인이 성공했습니다.";
                 session.setAttribute("SS_USER_ID", user_id);
+
+            }else{
+                msg = "아이디와 비밀번호가 올바르지 않습니다.";
+
             }
 
         } catch (Exception e) {
             //저장이 실패되면 사용자에게 보여줄 메시지
+            msg = "시스템 문제로 로그인이 실패했습니다.";
             res = 2;
             log.info(e.toString());
             e.printStackTrace();
@@ -299,6 +304,6 @@ public class UserInfoController {
 
         log.info(this.getClass().getName() + ".user/loginSuccess End!");
 
-        return "/user/loginSuccess";
+        return "user/loginSuccess";
     }
 }
