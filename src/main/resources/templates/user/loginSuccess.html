@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>로그인 성공</title>
+    <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+
+        // HTML로딩이 완료되고, 실행됨
+        $(document).ready(function () {
+
+            // html의 btnSend id의 버튼 객체 가져오기
+            const btnMain = document.getElementById("btnMain");
+
+            // 버튼 클릭했을때, 발생되는 이벤트 생성함(onclick 이벤트와 동일함)
+            btnMain.addEventListener("click", e => {
+                document.location.href = "/html/index.html";
+            })
+
+        })
+    </script>
 </head>
 <body>
 <div th:text="${session.SS_USER_ID +'님이 로그인 되었습니다.'}"></div>
+<div>
+    <button id="btnMain">메인 화면 이동</button>
+</div>
 </body>
 </html>
