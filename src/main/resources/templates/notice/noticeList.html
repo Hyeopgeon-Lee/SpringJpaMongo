@@ -28,12 +28,12 @@
         </div>
     </div>
     <div class="divTableBody">
-        <div class="divTableRow" th:each="dto: ${rList}">
+        <div class="divTableRow" th:each="dto, loop: ${rList}">
             <div class="divTableCell" th:if="${dto.noticeYn=='Y'}" th:text="공지사항"></div>
-            <div class="divTableCell" th:unless="${dto.noticeYn=='Y'}" th:text="${dto.noticeSeq}"></div>
+            <div class="divTableCell" th:unless="${dto.noticeYn=='Y'}" th:text="${rList.size() - loop.index}"></div>
             <div class="divTableCell" th:text="${dto.title}" th:onclick="doDetail([[${dto.noticeSeq}]])"></div>
             <div class="divTableCell" th:text="${dto.readCnt}"></div>
-            <div class="divTableCell" th:text="${dto.userName}"></div>
+            <div class="divTableCell" th:text="${dto.userId}"></div>
             <div class="divTableCell" th:text="${dto.regDt}"></div>
         </div>
     </div>

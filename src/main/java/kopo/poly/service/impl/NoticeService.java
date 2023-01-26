@@ -138,7 +138,7 @@ public class NoticeService implements INoticeService {
 
     @Transactional
     @Override
-    public void InsertNoticeInfo(NoticeDTO pDTO) throws Exception {
+    public void insertNoticeInfo(NoticeDTO pDTO) throws Exception {
 
         log.info(this.getClass().getName() + ".InsertNoticeInfo Start!");
 
