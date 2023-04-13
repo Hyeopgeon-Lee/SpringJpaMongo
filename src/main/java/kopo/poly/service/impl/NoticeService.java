@@ -17,13 +17,10 @@ import java.util.List;
 
 @Slf4j
 @RequiredArgsConstructor
-@Service("NoticeService")
+@Service
 public class NoticeService implements INoticeService {
 
-    // RequiredArgsConstructor 어노테이션으로 생성자를 자동 생성함
-    // noticeRepository 변수에 이미 메모리에 올라간 NoticeRepository 객체를 넣어줌
-    // 예전에는 autowired 어노테이션를 통해 설정했었지만, 이젠 생성자를 통해 객체 주입함
-    private final NoticeRepository noticeRepository;
+    private final NoticeRepository noticeRepository; // 공지사항
 
     @Override
     public List<NoticeDTO> getNoticeList() {
@@ -129,7 +126,7 @@ public class NoticeService implements INoticeService {
         String noticeSeq = CmmUtil.nvl(pDTO.getNoticeSeq());
         log.info("noticeSeq : " + noticeSeq);
 
-        // 데이터 수정하기
+        // 공지사항 삭제하기
         noticeRepository.deleteById(noticeSeq);
 
 

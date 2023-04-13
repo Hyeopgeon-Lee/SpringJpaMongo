@@ -21,3 +21,4 @@ public class NoticeDTO {
     private String userName; // 등록자명
 
 }
+
